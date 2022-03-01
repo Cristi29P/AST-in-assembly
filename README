@@ -1,0 +1,22 @@
+Iocla_atoi:
+->We save the parameter passed to the function from the stack into the edi register.
+->Checking if we are dealing with a negative number and setting the appropiate flag.
+->We parse each character of the string and we constantly check if we've reached the
+end of the string.
+->We convert each character into its coresponding number, we multiply the previous
+sum by then and add the current number to the result.
+->In the end, if the number we are dealing with it's negative, we compute its two's
+complement and store the result in the eax register.
+
+Create_tree:
+->We are saving the registers' initial states and save the function's parameter in eax.
+->We compute the reverse polish notation for easier parsing by reversing the string.
+->We start calling strtok to tokenize the string.
+->Each token is reversed once more to make sure we are not dealing with incorrect 
+representations of multi-digit numbers.
+->We are checking if the token si a number or an operand and we allocate the right
+amount of space on the heap for its corresponding node and we push it on the stack.
+->If the token is an operand, we pop two elements off the stack and link them to the 
+operand. The resulting node is once again pushed on the stack.
+->The loop ends when we reach the null character.
+
